@@ -25,7 +25,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y qemu qemu-user-static binfmt-support build-essential
           rustup target add x86_64-unknown-freebsd
-          sed -i 's/const CLOCK_ID: ClockId = ClockId::CLOCK_BOOTTIME;/const CLOCK_ID: ClockId = ClockId::CLOCK_MONOTONIC;/g' ./lib/boringtun/src/sleepyinstant/unix.rs
       - name: 安装 cross
         run: cargo install cross --git https://github.com/cross-rs/cross
 
